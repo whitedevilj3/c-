@@ -1,0 +1,62 @@
+// You are using GCC
+#include<iostream>
+using namespace std; 
+#include<string>
+#include<vector>
+template<typename t1,typename t2>
+void add(t1 str,t2 n,vector<t1>&v1,vector<t2>&v2){
+    v1.push_back(str);
+    v2.push_back(n);
+    cout<<str<<" - Added"<<endl;
+}
+template<typename t1,typename t2>
+void upd(t1 str,t2 n,vector<t1>& v1,vector<t2>& v2){
+    for(int i = 0;i<v1.size();i++){
+        if(v1[i]==str){
+            v2[i]=n;
+        }
+        
+    }
+    cout<<"Model Name: "<<str<<", Assembly Steps: "<<n<<endl;
+}
+template<typename t1,typename t2>
+void dis(vector<t1>&v1,vector<t2>&v2){
+    for(int i= 0; i<v1.size();i++){
+        cout<<"Model Name: "<<v1[i]<<", Assembly Steps: "<<v2[i]<<endl;
+    }
+}
+int main(){
+    int ch; 
+    vector<string> vec1;
+    vector<int> vec2;
+    while(true){
+        cin>>ch;
+        if(ch==1){
+            string s;
+            int ass;
+            cin.ignore();
+            getline(cin,s);
+            cin>>ass;
+            add(s,ass,vec1,vec2);
+        }
+        else if (ch ==2 ){
+            string s;
+            int ass;
+            cin.ignore();
+            getline(cin,s);
+            cin>>ass;
+            upd(s,ass,vec1,vec2);
+        }
+        else if (ch ==3){
+            dis(vec1,vec2);
+        }
+        else if(ch ==4){
+            break;
+        }
+        else{
+            cout<<"Invalid choice"<<endl;
+        }
+    }
+}
+
+    
