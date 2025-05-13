@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std; 
+class player{
+    protected:
+    static int count ;
+    public:
+    player(){
+        count++;
+        cout<<count<<endl;
+    }
+};
+class gm:public player {
+    public: 
+    static void cgm(){
+        if(count== 3){
+            cout<<"game has been completed"<<endl;
+            count =0;
+            cout<<count<<endl;
+        }
+    }
+}; 
+int player::count = 0;
+int main(){
+    gm g1; 
+    gm g2;
+    gm g3;
+    gm::cgm();
+    return 0;
+}
