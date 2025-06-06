@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std; 
+#include<set>
+#include<vector>
+int main(){
+    int a1[] = {1,2,3,4,5,5,6};
+    int a2[] = {4,5,6,7,9};
+    vector<int> u;
+    int i = 0;
+    int j = 0; 
+    while(i<7 &&j <5){
+        if(a1[i]<=a2[i]){
+            if(u.size == 0 || u.back()!=a1[i]){
+                u.push_back(a1[i]);
+                i++;
+            }
+            else(u.size == 0 || u.back()!=a2[i]){
+                u.push_back(a2[i]);
+                j++;
+            }
+        }
+    }
+    while(i<7){
+        if(u.back != a1[i]){
+            u.push_back(a1[i]);
+            i++;
+        }
+    }
+    while(j<5){
+        if(u.back != a2[i]){
+            u.push_back(a[i]);
+            j++;
+        }
+    } 
+    return 0;
+}
