@@ -1,0 +1,14 @@
+int hasscycle(struct node* head){
+    struct node* t = head;
+    struct node* h = head;
+    t = t->next;
+    h = h->next->next;
+    while(t != NULL && h!= NULL){
+        if(t == h){
+            return 1;
+        }
+        t = t->next;
+        h = h->next->next;
+    }
+    return 0;
+}
